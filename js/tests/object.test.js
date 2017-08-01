@@ -1,21 +1,33 @@
-[sourcecode lang=”javascript”]
+describe("myFunction", function() {
+    var myfunc = NS.myFunction;
 
-//replace “//will insert additional tests here later” with the following:
+    beforeEach(function(){
+        spyOn(myfunc, 'init').and.callThrough();
+    });
 
-describe(“appending strings”, function() {
+    afterEach(function() {
+        myfunc.reset();
+    });
 
-it(“should be able to append 2 strings”, function() {
+    it("should be able to initialize", function() {
+        expect(myfunc.init).toBeDefined();
+        myfunc.init();
+        expect(myfunc.init).toHaveBeenCalled();
+    });
 
-expect(myfunc.append).toBeDefined();
+    it("should populate stuff during initialization", function(){
+        myfunc.init();
+        expect(myfunc.stuff.length).toEqual(1);
+        expect(myfunc.stuff[0]).toEqual('Testing');
+    });
 
+    //ADDITIONAL TESTS TO WRITE FIRST:
+    describe("appending strings", function() {
+        it("should be able to append 2 strings", function() {
+            expect(myfunc.append).toBeDefined();
+        });
+        it("should append 2 strings", function() {
+            expect(myfunc.append('hello ','world')).toEqual('hello world');
+        });
+    });
 });
-
-it(“should append 2 strings”, function() {
-
-expect(myfunc.append(‘hello ‘,’world’)).toEqual(‘hello world’);
-
-});
-
-});
-
-[/sourcecode]

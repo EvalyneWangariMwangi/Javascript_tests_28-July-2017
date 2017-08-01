@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sat Jul 29 2017 10:40:12 GMT+0000 (UTC)
+// Generated on Sat Jul 29 2017 13:28:40 GMT+0000 (UTC)
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js/*.js',
-      'js/tests/*.js'
+      'js/calc.js',
+      'js/tests/calc.test.js'
     ],
 
 
@@ -28,7 +28,6 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        // 'spec/*.js': ['browserify']
     },
 
 
